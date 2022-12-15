@@ -1,0 +1,33 @@
+version: '3.1'
+
+services:
+  web:
+    image: praqma/network-multitool:latest
+    ports:
+      - "80:80"
+    expose:
+      - "80"
+    networks:
+      - frontend
+  app:
+    image: praqma/network-multitool:latest
+    ports:
+      - "1180:1180"
+    expose:
+      - "1180"
+    networks:
+      - backend
+  db:
+    image: praqma/network-multitool:latest
+    ports:
+      - "11443:11443"
+    expose:
+      - "11443"
+    networks:
+      - backend
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
