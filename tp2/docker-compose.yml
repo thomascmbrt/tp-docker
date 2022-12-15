@@ -17,7 +17,7 @@ services:
     networks:
       - mysql-network
   db:
-    image: mysql
+    image: mysql:5.7-debian
     environment:
       MYSQL_ROOT_PASSWORD: azerty
       MYSQL_DATABASE: ma_super_app
